@@ -1,2 +1,2 @@
-# [my site](https://mindtapevents.github.io)
-# mindtapevents.github.io
+# [my site](https://freqfact.github.io)
+# freqfact.github.io
