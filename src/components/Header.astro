@@ -10,7 +10,7 @@ const pathToTitle: Record<string, string> = {
     '/links': 'LINKS'
 };
 
-const currentTitle = pathToTitle[Astro.url.pathname] || 'FREQFACT';
+const currentTitle = pathToTitle[Astro.url.pathname] || 'FREQUENCY FACTORY';
 ---
 <header class="bg-transparent py-1">
     <div class="container mx-auto px-4">
@@ -23,13 +23,19 @@ const currentTitle = pathToTitle[Astro.url.pathname] || 'FREQFACT';
             </nav>
             <div class="flex items-center gap-4">
                 <h1 class="text-white text-xl font-bold uppercase text-glow">{currentTitle}</h1>
-                <a href="/" class="text-2xl font-bold text-glow">
-                    <Image src={logo} alt="Frequency Factory Logo" width={150} height={40} class="w-10 p-2" />
-                </a>
+                <!-- <a href="/" class="text-2xl font-bold text-glow">
+                    <Image 
+                        src={logo} 
+                        alt="Frequency Factory Logo" 
+                        width={150} 
+                        height={40} 
+                        class="w-10 p-2 lg:block md:hidden hidden" 
+                    />
+                </a> -->
             </div>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
@@ -51,6 +57,7 @@ const currentTitle = pathToTitle[Astro.url.pathname] || 'FREQFACT';
         /* color: white; */
         text-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
     }
+    
 </style>
 
 <script>

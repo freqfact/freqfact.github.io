@@ -2,15 +2,6 @@
 import astroLogo from '../assets/logo.png';
 import background from '../assets/backgroundd.png';
 import { Image } from 'astro:assets';
-
-// Define the interface for your props
-interface Props {
-	// message is optional but will have a default value when used
-	message?: string;
-}
-
-// The destructuring is valid since we provide a default value
-const { message = "Default message" } = Astro.props as Props;
 ---
 
 <div id="container">
@@ -23,15 +14,8 @@ const { message = "Default message" } = Astro.props as Props;
 	/>
 	<main>
 		<section id="hero">
-			<a href={new URL('/links', Astro.site)}>
-				<Image 
-					src={astroLogo} 
-					alt="FF LOGO" 
-					width={200} 
-					height={200} 
-					class="glow" 
-				/>
-			</a>
+			<a href="/links">
+				<Image src={astroLogo} alt="FF LOGO" width={200} height={200} class="glow" /></a>
 			<!-- <h1>
 				<code><pre>Clock in</pre></code>
 			</h1> -->

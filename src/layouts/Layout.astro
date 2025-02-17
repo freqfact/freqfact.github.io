@@ -9,16 +9,16 @@ interface Props {
 }
 
 const pathToTitle: Record<string, string> = {
-  '/': 'FREQFACT | HOME',
-  '/events': 'FREQFACT | EVENTS',
-  '/about': 'FREQFACT | ABOUT',
-  '/contact': 'FREQFACT | CONTACT',
-  '/links': 'FREQFACT | LINKS'
+  '/': 'FREQUENCY FACTORY | HOME',
+  '/events': 'EVENTS | FREQUENCY FACTORY',
+  '/about': 'ABOUT | FREQUENCY FACTORY',
+  '/contact': 'CONTACT | FREQUENCY FACTORY',
+  '/links': 'LINKS | FREQUENCY FACTORY'
 };
 
 const { 
-  title = pathToTitle[Astro.url.pathname] || 'FREQFACT',
-  description = "FREQFACT"
+  title = pathToTitle[Astro.url.pathname] || 'FREQUENCY FACTORY',
+  description = "FREQUENCY FACTORY"
 } = Astro.props;
 ---
 <!doctype html>

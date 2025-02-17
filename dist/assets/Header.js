@@ -1,10 +1,10 @@
-import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, M as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, e as UnsupportedImageConversion, N as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, f as ExpectedImageOptions, g as ExpectedNotESMImage, h as InvalidImageService, t as toStyleString, b as createAstro, c as createComponent, i as ImageMissingAlt, m as maybeRenderHead, d as addAttribute, s as spreadAttributes, a as renderTemplate, j as renderHead, k as renderSlot, r as renderComponent, l as renderScript } from './astro/server.js';
-import 'kleur/colors';
+import { isRemotePath, joinPaths } from '@astrojs/internal-helpers/path';
+import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, M as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, d as UnsupportedImageConversion, N as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, e as ExpectedImageOptions, f as ExpectedNotESMImage, g as InvalidImageService, t as toStyleString, b as createAstro, c as createComponent, h as ImageMissingAlt, m as maybeRenderHead, i as addAttribute, s as spreadAttributes, a as renderTemplate, j as renderHead, k as renderSlot, l as renderScript } from './astro/server.js';
+import * as mime from 'mrmime';
 import 'html-escaper';
 import 'clsx';
+import 'kleur/colors';
 /* empty css      */
-import { isRemotePath, joinPaths } from '@astrojs/internal-helpers/path';
-import * as mime from 'mrmime';
 
 const VALID_SUPPORTED_FORMATS = [
   "jpeg",
@@ -1409,7 +1409,7 @@ function applyResponsiveAttributes({
   return attributes;
 }
 
-const $$Astro$3 = createAstro("https://freqfact.github.io");
+const $$Astro$3 = createAstro("https://freqfact.com");
 const $$Image = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Image;
@@ -1444,7 +1444,7 @@ const $$Image = createComponent(async ($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<img${addAttribute(image.src, "src")}${spreadAttributes(attributes)}${addAttribute(className, "class")}>`;
 }, "/Users/phist/Library/Mobile Documents/com~apple~CloudDocs/FREQ FACT/MISC/freqfact.github.io/node_modules/astro/components/Image.astro", void 0);
 
-const $$Astro$2 = createAstro("https://freqfact.github.io");
+const $$Astro$2 = createAstro("https://freqfact.com");
 const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Picture;
@@ -1520,38 +1520,25 @@ const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
 const imageConfig = {"endpoint":{"route":"/_image"},"service":{"entrypoint":"astro/assets/services/sharp","config":{}},"domains":[],"remotePatterns":[],"experimentalResponsiveImages":false};
 					const getImage = async (options) => await getImage$1(options, imageConfig);
 
-const $$Astro$1 = createAstro("https://freqfact.github.io");
+const $$Astro$1 = createAstro("https://freqfact.com");
 const $$Layout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Layout;
   const pathToTitle = {
-    "/": "FREQFACT | HOME",
-    "/events": "FREQFACT | EVENTS",
-    "/about": "FREQFACT | ABOUT",
-    "/contact": "FREQFACT | CONTACT",
-    "/links": "FREQFACT | LINKS"
+    "/": "FREQUENCY FACTORY | HOME",
+    "/events": "EVENTS | FREQUENCY FACTORY",
+    "/about": "ABOUT | FREQUENCY FACTORY",
+    "/contact": "CONTACT | FREQUENCY FACTORY",
+    "/links": "LINKS | FREQUENCY FACTORY"
   };
   const {
-    title = pathToTitle[Astro2.url.pathname] || "FREQFACT",
-    description = "FREQFACT"
+    title = pathToTitle[Astro2.url.pathname] || "FREQUENCY FACTORY",
+    description = "FREQUENCY FACTORY"
   } = Astro2.props;
   return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="description"${addAttribute(description, "content")}><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>${title}</title>${renderHead()}</head> <body> <main> ${renderSlot($$result, $$slots["default"])} </main> </body></html>`;
 }, "/Users/phist/Library/Mobile Documents/com~apple~CloudDocs/FREQ FACT/MISC/freqfact.github.io/src/layouts/Layout.astro", void 0);
 
-const astroLogo = new Proxy({"src":"/assets/logo.png","width":2500,"height":2500,"format":"png"}, {
-						get(target, name, receiver) {
-							if (name === 'clone') {
-								return structuredClone(target);
-							}
-							if (name === 'fsPath') {
-								return "/Users/phist/Library/Mobile Documents/com~apple~CloudDocs/FREQ FACT/MISC/freqfact.github.io/src/assets/logo.png";
-							}
-							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/Users/phist/Library/Mobile Documents/com~apple~CloudDocs/FREQ FACT/MISC/freqfact.github.io/src/assets/logo.png");
-							return target[name];
-						}
-					});
-
-const $$Astro = createAstro("https://freqfact.github.io");
+const $$Astro = createAstro("https://freqfact.com");
 const $$Header = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Header;
@@ -1562,8 +1549,16 @@ const $$Header = createComponent(($$result, $$props, $$slots) => {
     "/contact": "CONTACT",
     "/links": "LINKS"
   };
-  const currentTitle = pathToTitle[Astro2.url.pathname] || "FREQFACT";
-  return renderTemplate`${maybeRenderHead()}<header class="bg-transparent py-1" data-astro-cid-3ef6ksr2> <div class="container mx-auto px-4" data-astro-cid-3ef6ksr2> <div class="flex justify-between items-center" data-astro-cid-3ef6ksr2> <nav class="hidden md:flex space-x-12" data-astro-cid-3ef6ksr2> <a href="/"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>Home</a> <a href="/events"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/events" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>Events</a> <a href="/about"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/about" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>About</a> <a href="/links"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/links" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>Links</a> </nav> <div class="flex items-center gap-4" data-astro-cid-3ef6ksr2> <h1 class="text-white text-xl font-bold uppercase text-glow" data-astro-cid-3ef6ksr2>${currentTitle}</h1> <a href="/" class="text-2xl font-bold text-glow" data-astro-cid-3ef6ksr2> ${renderComponent($$result, "Image", $$Image, { "src": astroLogo, "alt": "Frequency Factory Logo", "width": 150, "height": 40, "class": "w-10 p-2", "data-astro-cid-3ef6ksr2": true })} </a> </div> <div class="md:hidden" data-astro-cid-3ef6ksr2> <button id="menu-toggle" class="text-white" data-astro-cid-3ef6ksr2> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <nav id="mobile-menu" class="hidden fixed top-12 left-0 right-0 bg-black bg-opacity-90 p-4" data-astro-cid-3ef6ksr2> <div class="flex flex-col space-y-4" data-astro-cid-3ef6ksr2> <a href="/"${addAttribute(`text-white-600 hover:text-white-900 text-xl py-4 px-6 transition-colors ${Astro2.url.pathname === "/" ? "text-yellow-400 font-bold" : ""}`, "class")} data-astro-cid-3ef6ksr2>HOME</a> <a href="/events"${addAttribute(`text-white-600 hover:text-white-900 text-xl py-4 px-6 transition-colors ${Astro2.url.pathname === "/events" ? "text-yellow-400 font-bold" : ""}`, "class")} data-astro-cid-3ef6ksr2>EVENTS</a> <a href="/about"${addAttribute(`text-white-600 hover:text-white-900 text-xl py-4 px-6 transition-colors ${Astro2.url.pathname === "/about" ? "text-yellow-400 font-bold" : ""}`, "class")} data-astro-cid-3ef6ksr2>ABOUT</a> <a href="/links"${addAttribute(`text-white-600 hover:text-white-900 text-xl py-4 px-6 transition-colors ${Astro2.url.pathname === "/links" ? "text-yellow-400 font-bold" : ""}`, "class")} data-astro-cid-3ef6ksr2>LINKS</a> </div> </nav> </div> </div> </div> </header>  ${renderScript($$result, "/Users/phist/Library/Mobile Documents/com~apple~CloudDocs/FREQ FACT/MISC/freqfact.github.io/src/components/Header.astro?astro&type=script&index=0&lang.ts")}`;
+  const currentTitle = pathToTitle[Astro2.url.pathname] || "FREQUENCY FACTORY";
+  return renderTemplate`${maybeRenderHead()}<header class="bg-transparent py-1" data-astro-cid-3ef6ksr2> <div class="container mx-auto px-4" data-astro-cid-3ef6ksr2> <div class="flex justify-between items-center" data-astro-cid-3ef6ksr2> <nav class="hidden md:flex space-x-12" data-astro-cid-3ef6ksr2> <a href="/"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>Home</a> <a href="/events"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/events" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>Events</a> <a href="/about"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/about" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>About</a> <a href="/links"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/links" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>Links</a> </nav> <div class="flex items-center gap-4" data-astro-cid-3ef6ksr2> <h1 class="text-white text-xl font-bold uppercase text-glow" data-astro-cid-3ef6ksr2>${currentTitle}</h1> <!-- <a href="/" class="text-2xl font-bold text-glow">
+                    <Image 
+                        src={logo} 
+                        alt="Frequency Factory Logo" 
+                        width={150} 
+                        height={40} 
+                        class="w-10 p-2 lg:block md:hidden hidden" 
+                    />
+                </a> --> </div> <div class="md:hidden" data-astro-cid-3ef6ksr2> <button id="menu-toggle" class="text-white" data-astro-cid-3ef6ksr2> <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <nav id="mobile-menu" class="hidden fixed top-12 left-0 right-0 bg-black bg-opacity-90 p-4" data-astro-cid-3ef6ksr2> <div class="flex flex-col space-y-4" data-astro-cid-3ef6ksr2> <a href="/"${addAttribute(`text-white-600 hover:text-white-900 text-xl py-4 px-6 transition-colors ${Astro2.url.pathname === "/" ? "text-yellow-400 font-bold" : ""}`, "class")} data-astro-cid-3ef6ksr2>HOME</a> <a href="/events"${addAttribute(`text-white-600 hover:text-white-900 text-xl py-4 px-6 transition-colors ${Astro2.url.pathname === "/events" ? "text-yellow-400 font-bold" : ""}`, "class")} data-astro-cid-3ef6ksr2>EVENTS</a> <a href="/about"${addAttribute(`text-white-600 hover:text-white-900 text-xl py-4 px-6 transition-colors ${Astro2.url.pathname === "/about" ? "text-yellow-400 font-bold" : ""}`, "class")} data-astro-cid-3ef6ksr2>ABOUT</a> <a href="/links"${addAttribute(`text-white-600 hover:text-white-900 text-xl py-4 px-6 transition-colors ${Astro2.url.pathname === "/links" ? "text-yellow-400 font-bold" : ""}`, "class")} data-astro-cid-3ef6ksr2>LINKS</a> </div> </nav> </div> </div> </div> </header>  ${renderScript($$result, "/Users/phist/Library/Mobile Documents/com~apple~CloudDocs/FREQ FACT/MISC/freqfact.github.io/src/components/Header.astro?astro&type=script&index=0&lang.ts")}`;
 }, "/Users/phist/Library/Mobile Documents/com~apple~CloudDocs/FREQ FACT/MISC/freqfact.github.io/src/components/Header.astro", void 0);
 
-export { $$Image as $, $$Layout as a, $$Header as b, astroLogo as c, baseService as d, parseQuality as p };
+export { $$Image as $, $$Layout as a, $$Header as b, baseService as c, parseQuality as p };

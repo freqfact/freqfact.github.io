@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://freqfact.github.io',
+  site: 'https://freqfact.com',
   base: '/',
   vite: {
     plugins: [tailwindcss()],
