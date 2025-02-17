@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets';
+import link_logo from '../assets/g_logo.jpeg'; // Adjust path based on your logo location
+---
+
+<div class="container">
+    <div class="links-grid">
+        <div class="image-container">
+            <Image 
+                src={link_logo} 
+                alt="Frequency Factory Logo" 
+                width={800} 
+                height={400}
+                class="header-image"
+            />
+        </div>
+        <header class="text-white text-xl">FREQUENCY FACTORY</header>
+        <a href="https://theticketing.co/o/freqfact" class="link-button">
+            <i class="fa-solid fa-ticket"></i>
+            CLOCK IN
+        </a>
+        </br>
+        <a href="https://www.instagram.com/freqfact/" class="link-button">
+            <i class="fab fa-instagram"></i>
+            INSTAGRAM
+        </a>
+        <a href="https://www.facebook.com/freqfact" class="link-button">
+            <i class="fab fa-facebook"></i>
+            FACEBOOK
+        </a>
+        <a href="https://soundcloud.com/freqfact" class="link-button">
+            <i class="fab fa-soundcloud"></i>
+            SET RECORDINGS & MORE
+        </a>
+        <a href="https://open.spotify.com/playlist/19eABEffR7Ic77fAekO5VZ" class="link-button">
+            <i class="fab fa-spotify"></i>
+            ASSEMBLY LINE PLAYLIST
+        </a>
+        <a href="mailto:info@freqfact.com" class="link-button">
+            <i class="fa-solid fa-envelope"></i>
+            EMAIL US
+        </a>
+        <!-- <a href="https://google.com" class="link-button">SHOP MERCH</a> -->
+    </div>
+</div>
+
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .links-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+        margin-bottom: 50px;
+
+    }
+
+    .image-container {
+        width: 50%;
+        margin-bottom: 2rem;
+        border-radius: 0.25rem;
+        overflow: hidden;
+    }
+
+    .header-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .link-button {
+        display: block;
+        padding: 0.5rem 2rem;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        text-decoration: none;
+        border-radius: 0.25rem;
+        transition: all 0.2s;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        height: 2.5rem;
+        line-height: 1.5rem;
+    }
+
+    .link-button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+</style>
