@@ -1,28 +1,32 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/logo.png';
+// import { Image } from 'astro:assets';
+// import logo from '../assets/logo.png';
 
 const pathToTitle: Record<string, string> = {
     '/': 'FREQUENCY FACTORY',
-    '/events': 'EVENTS',
-    '/about': 'ABOUT',
-    '/contact': 'CONTACT',
-    '/links': 'LINKS'
+    '/events': 'EVENTS | FREQUENCY FACTORY',
+    '/about': 'ABOUT | FREQUENCY FACTORY',
+    '/contact': 'CONTACT | FREQUENCY FACTORY',
+    '/links': 'LINKS | FREQUENCY FACTORY'
 };
 
-const currentTitle = pathToTitle[Astro.url.pathname] || 'FREQUENCY FACTORY';
+const currentPath = Astro.url.pathname;
+const currentTitle = pathToTitle[currentPath] || 'FREQUENCY FACTORY';
+
 ---
 <header class="bg-transparent py-1">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center">
             <nav class="hidden md:flex space-x-12">
-                <a href="/" class={`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro.url.pathname === "/" ? "text-yellow-400 font-bold" : "text-white"}`}>Home</a>
-                <a href="/events" class={`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro.url.pathname === "/events" ? "text-yellow-400 font-bold" : "text-white"}`}>Events</a>
-                <a href="/about" class={`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro.url.pathname === "/about" ? "text-yellow-400 font-bold" : "text-white"}`}>About</a>
-                <a href="/links" class={`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro.url.pathname === "/links" ? "text-yellow-400 font-bold" : "text-white"}`}>Links</a>
+                <a href="/" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white">Home</a>
+                <a href="/events" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white">Events</a>
+                <a href="/about" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white">About</a>
+                <a href="/links" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white">Links</a>
             </nav>
             <div class="flex items-center gap-4">
-                <h1 class="text-white text-xl font-bold uppercase text-glow">{currentTitle}</h1>
+                <h1 class="text-xl font-bold uppercase text-glow text-white">
+                    {currentTitle}
+                </h1>
                 <!-- <a href="/" class="text-2xl font-bold text-glow">
                     <Image 
                         src={logo} 
@@ -61,9 +65,44 @@ const currentTitle = pathToTitle[Astro.url.pathname] || 'FREQUENCY FACTORY';
 </style>
 
 <script>
+    // Client-side title updates
+    const pathToTitle: Record<string, string> = {
+        '/': 'FREQUENCY FACTORY',
+        '/events': 'EVENTS | FREQUENCY FACTORY',
+        '/about': 'ABOUT | FREQUENCY FACTORY',
+        '/contact': 'CONTACT | FREQUENCY FACTORY',
+        '/links': 'LINKS | FREQUENCY FACTORY'
+    };
+
+    function updateTitle() {
+        const cleanPathname = window.location.pathname.endsWith('/') 
+            ? window.location.pathname.slice(0, -1) || '/' 
+            : window.location.pathname;
+        
+        const title = pathToTitle[cleanPathname] || 'FREQUENCY FACTORY';
+        document.title = title;
+        
+        const headerTitle = document.querySelector('h1');
+        if (headerTitle) {
+            headerTitle.textContent = title;
+        }
+        
+        // Update active link highlighting
+        document.querySelectorAll('nav a').forEach(link => {
+            const isActive = link.getAttribute('href') === cleanPathname;
+            link.classList.toggle('text-yellow-400', isActive);
+            link.classList.toggle('font-bold', isActive);
+            link.classList.toggle('text-white', !isActive);
+        });
+    }
+
+    // Update on page load and navigation
+    updateTitle();
+    document.addEventListener('astro:page-load', updateTitle);
+
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-
     menuToggle?.addEventListener('click', () => {
         mobileMenu?.classList.toggle('hidden');
     });

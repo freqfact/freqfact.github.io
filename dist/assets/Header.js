@@ -1544,13 +1544,14 @@ const $$Header = createComponent(($$result, $$props, $$slots) => {
   Astro2.self = $$Header;
   const pathToTitle = {
     "/": "FREQUENCY FACTORY",
-    "/events": "EVENTS",
-    "/about": "ABOUT",
-    "/contact": "CONTACT",
-    "/links": "LINKS"
+    "/events": "EVENTS | FREQUENCY FACTORY",
+    "/about": "ABOUT | FREQUENCY FACTORY",
+    "/contact": "CONTACT | FREQUENCY FACTORY",
+    "/links": "LINKS | FREQUENCY FACTORY"
   };
-  const currentTitle = pathToTitle[Astro2.url.pathname] || "FREQUENCY FACTORY";
-  return renderTemplate`${maybeRenderHead()}<header class="bg-transparent py-1" data-astro-cid-3ef6ksr2> <div class="container mx-auto px-4" data-astro-cid-3ef6ksr2> <div class="flex justify-between items-center" data-astro-cid-3ef6ksr2> <nav class="hidden md:flex space-x-12" data-astro-cid-3ef6ksr2> <a href="/"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>Home</a> <a href="/events"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/events" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>Events</a> <a href="/about"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/about" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>About</a> <a href="/links"${addAttribute(`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${Astro2.url.pathname === "/links" ? "text-yellow-400 font-bold" : "text-white"}`, "class")} data-astro-cid-3ef6ksr2>Links</a> </nav> <div class="flex items-center gap-4" data-astro-cid-3ef6ksr2> <h1 class="text-white text-xl font-bold uppercase text-glow" data-astro-cid-3ef6ksr2>${currentTitle}</h1> <!-- <a href="/" class="text-2xl font-bold text-glow">
+  const currentPath = Astro2.url.pathname;
+  const currentTitle = pathToTitle[currentPath] || "FREQUENCY FACTORY";
+  return renderTemplate`${maybeRenderHead()}<header class="bg-transparent py-1" data-astro-cid-3ef6ksr2> <div class="container mx-auto px-4" data-astro-cid-3ef6ksr2> <div class="flex justify-between items-center" data-astro-cid-3ef6ksr2> <nav class="hidden md:flex space-x-12" data-astro-cid-3ef6ksr2> <a href="/" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white" data-astro-cid-3ef6ksr2>Home</a> <a href="/events" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white" data-astro-cid-3ef6ksr2>Events</a> <a href="/about" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white" data-astro-cid-3ef6ksr2>About</a> <a href="/links" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white" data-astro-cid-3ef6ksr2>Links</a> </nav> <div class="flex items-center gap-4" data-astro-cid-3ef6ksr2> <h1 class="text-xl font-bold uppercase text-glow text-white" data-astro-cid-3ef6ksr2> ${currentTitle} </h1> <!-- <a href="/" class="text-2xl font-bold text-glow">
                     <Image 
                         src={logo} 
                         alt="Frequency Factory Logo" 
