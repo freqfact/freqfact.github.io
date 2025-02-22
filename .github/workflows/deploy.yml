@@ -26,6 +26,19 @@ jobs:
           # path: . # The root location of your Astro project inside the repository. (optional)
           # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
           # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+      - name: Add headers to HTML files
+        run: |
+          find dist -type f -name "*.html" -exec sh -c '
+            echo "Cache-Control: no-cache, no-store, must-revalidate" > "${1}.headers"
+            echo "Pragma: no-cache" >> "${1}.headers"
+            echo "Expires: 0" >> "${1}.headers"
+          ' sh {} \;
+      - name: Add headers to static assets
+        run: |
+          find dist/assets -type f -exec sh -c '
+            echo "Cache-Control: public, max-age=31536000" > "${1}.headers"
+            echo "Expires: `date -u -d \"1 year\" \"+%a, %d %b %Y %H:%M:%S GMT\"`" >> "${1}.headers"
+          ' sh {} \;
 
   deploy:
     needs: build
