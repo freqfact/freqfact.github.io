@@ -13,15 +13,18 @@ const pathToTitle: Record<string, string> = {
 const currentPath = Astro.url.pathname;
 const currentTitle = pathToTitle[currentPath] || 'FREQUENCY FACTORY';
 
+// Helper function to check if path is active
+const isActive = (path: string) => currentPath === path;
+
 ---
 <header class="bg-transparent py-1">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center">
             <nav class="hidden md:flex space-x-12">
-                <a href="/" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white">Home</a>
-                <a href="/events" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white">Events</a>
-                <a href="/about" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white">About</a>
-                <a href="/links" class="uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all text-white">Links</a>
+                <a href="/" class={`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${isActive('/') ? 'text-yellow-400 font-bold' : 'text-white'}`}>Home</a>
+                <a href="/events" class={`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${isActive('/events') ? 'text-yellow-400 font-bold' : 'text-white'}`}>Events</a>
+                <a href="/about" class={`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${isActive('/about') ? 'text-yellow-400 font-bold' : 'text-white'}`}>About</a>
+                <a href="/links" class={`uppercase text-glow hover:text-yellow-400 text-xl py-4 px-6 transition-all ${isActive('/links') ? 'text-yellow-400 font-bold' : 'text-white'}`}>Links</a>
             </nav>
             <div class="flex items-center gap-4">
                 <h1 class="text-xl font-bold uppercase text-glow text-white">
