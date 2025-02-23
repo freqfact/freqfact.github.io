@@ -15,7 +15,7 @@ import background from '../assets/backgroundd.png';
 	<main>
 		<section id="hero">
 			<a href="/links">
-				<Image src={astroLogo} alt="FF LOGO" width={200} height={200} class="glow logo_grow" />
+				<Image src={astroLogo} alt="FF LOGO"  class="glow logo_grow" />
 			</a>
 		</section>
 	</main>
@@ -43,17 +43,19 @@ import background from '../assets/backgroundd.png';
 
 	.logo_grow {
         width: 100%;
-        height: auto;
+        height: 200px;
         object-fit: cover;
+		object-position: 50% 50%;
         animation: slowZoom 5s ease-in-out infinite alternate;
     }
 
     @keyframes slowZoom {
         from {
+			transform: skew(2deg);
 			transform: scale(.9);
         }
         to {
-            transform: scale(1.1);
+            transform: scale(1);
         }
     }
 </style>
