@@ -69,6 +69,10 @@ a {
     margin-right: 8px;
 }
 
+.min-h-screen {
+    min-height: 100vh;
+}
+
 @keyframes pulse {
     0% {
         box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
